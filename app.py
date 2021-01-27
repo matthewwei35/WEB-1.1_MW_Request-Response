@@ -26,10 +26,10 @@ def madlibs(adjective, noun):
 @app.route('/multiply/<number1>/<number2>')
 def multiply(number1, number2):
   """Displays the product of two numbers provided by the user."""
-  
+
   if number1.isdigit() and number2.isdigit():
     product = int(number1) * int(number2)
-    return f'The product of {number1} * {number2} is {product}.'
+    return f' {number1} times {number2} is {product}.'
   else:
     return 'Invalid inputs. Please try again by entering 2 numbers!'
 
