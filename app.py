@@ -1,6 +1,7 @@
 # TODO: Follow the assignment instructions to complete the required routes!
 # (And make sure to delete this TODO message when you're done!)
 from flask import Flask
+import random
 
 app = Flask(__name__)
 
@@ -27,7 +28,6 @@ def madlibs(adjective, noun):
 @app.route('/multiply/<number1>/<number2>')
 def multiply(number1, number2):
   """Displays the product of two numbers provided by the user."""
-
   num1 = number1
   num2 = number2
 
@@ -36,6 +36,16 @@ def multiply(number1, number2):
     return f'The product of {num1} * {num2} is {product}.'
   else:
     return 'Invalid inputs. Please try again by entering 2 numbers!'
+
+@app.route('/dicegame')
+def dicegame():
+  """Chooses a random number from 1 to 6. If the user rolls a 6, they win the game; otherwise, they lose."""
+  random_number = random.randint(1, 6)
+
+  if random_number == 6:
+    return f'You rolled a {random_number}. You won!'
+  else:
+    return f'You rolled a {random_number}. You lost!'
 
 if __name__ == '__main__':
   app.run(debug=True)
