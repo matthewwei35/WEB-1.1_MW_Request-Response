@@ -1,5 +1,3 @@
-# TODO: Follow the assignment instructions to complete the required routes!
-# (And make sure to delete this TODO message when you're done!)
 from flask import Flask
 import random
 
@@ -28,7 +26,7 @@ def madlibs(adjective, noun):
 @app.route('/multiply/<number1>/<number2>')
 def multiply(number1, number2):
   """Displays the product of two numbers provided by the user."""
-
+  
   if number1.isdigit() and number2.isdigit():
     product = int(number1) * int(number2)
     return f'The product of {number1} * {number2} is {product}.'
