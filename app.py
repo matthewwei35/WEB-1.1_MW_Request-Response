@@ -37,6 +37,19 @@ def multiply(number1, number2):
   else:
     return 'Invalid inputs. Please try again by entering 2 numbers!'
 
+@app.route('/sayntimes/<word>/<n>')
+def sayntimes(word, n):
+  """Displays a repeated string a given number of times."""
+  result = word
+
+  if n.isdigit():
+    for i in range(1, int(n)):
+      result = result + ' ' + word
+  else:
+    return 'Invalid input. Please try again by entering a word and a number!'
+
+  return f'{(1 + i)} Repeats: {result}'
+
 @app.route('/dicegame')
 def dicegame():
   """Chooses a random number from 1 to 6. If the user rolls a 6, they win the game; otherwise, they lose."""
