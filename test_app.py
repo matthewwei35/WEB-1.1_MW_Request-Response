@@ -103,7 +103,7 @@ def test_sayntimes_hello():
 
 def test_sayntimes_world():
     """Test the /sayntimes/world/3 route."""
-    res = app.test_client().get('/sayntimes/hello/6')
+    res = app.test_client().get('/sayntimes/world/3')
     assert res.status_code == 200
 
     result_page_text = res.get_data(as_text=True)
@@ -116,5 +116,3 @@ def test_sayntimes_invalid():
 
     result_page_text = res.get_data(as_text=True)
     assert 'Invalid' in result_page_text
-
-    
