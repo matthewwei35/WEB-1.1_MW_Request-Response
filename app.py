@@ -24,5 +24,18 @@ def madlibs(adjective, noun):
   """Displays a message to the user based on their choice of adjective and noun."""
   return f'The {adjective} {noun} walked down the road to the candy store.'
 
+@app.route('/multiply/<number1>/<number2>')
+def multiply(number1, number2):
+  """Displays the product of two numbers provided by the user."""
+
+  num1 = number1
+  num2 = number2
+
+  if num1.isdigit() and num2.isdigit():
+    product = int(num1) * int(num2)
+    return f'The product of {num1} * {num2} is {product}.'
+  else:
+    return 'Invalid inputs. Please try again by entering 2 numbers!'
+
 if __name__ == '__main__':
   app.run(debug=True)
