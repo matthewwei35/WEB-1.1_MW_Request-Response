@@ -16,6 +16,7 @@ def favorite_animal(users_animal):
 
 @app.route('/dessert/<users_dessert>')
 def favorite_dessert(users_dessert):
+  """Display a message to the user that changes based on their choice of dessert."""
   return f'How did you know I liked {users_dessert}?'
 
 if __name__ == '__main__':
