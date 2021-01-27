@@ -29,7 +29,7 @@ def multiply(number1, number2):
 
   if number1.isdigit() and number2.isdigit():
     product = int(number1) * int(number2)
-    return f' {number1} times {number2} is {product}.'
+    return f'{number1} times {number2} is {product}.'
   else:
     return 'Invalid inputs. Please try again by entering 2 numbers!'
 
